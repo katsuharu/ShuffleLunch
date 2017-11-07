@@ -1,0 +1,41 @@
+<% provide(:title, "ログイン") %>
+<% provide(:page_title, "ログイン") %>
+
+<div class="col-lg-12">
+  <div class="bs-component">
+    <%= form_for(:session, url: login_path, class: 'form-horizontal') do |f| %>
+      <fieldset>
+        <div class="form-group">
+          <%= f.label :企業コード %>
+          <%= f.text_field :company_code, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :メールアドレス %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :パスワード %> <%= link_to "(パスワードを忘れた場合)", new_password_reset_path %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox">
+            <%= f.label :remember_me, class: "checkbox inline" do %>
+              <%= f.check_box :remember_me %> ログイン情報を記憶する
+            <% end %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit "ログイン", class: "btn btn-primary" %>
+        </div>
+
+        <div class="form-group">
+          <p><%= link_to "新規会員登録はこちら", signup_path %></p>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

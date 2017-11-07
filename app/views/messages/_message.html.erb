@@ -1,0 +1,6 @@
+<div class="message" id="user_id_<%= message.try(:user).try(:id) %>">
+  <p>
+    <b><%= message.try(:user).try(:name) %></b> <%= message.created_at.strftime('%H:%M') %><br>
+    <%= message.content %>
+  </p>
+</div>

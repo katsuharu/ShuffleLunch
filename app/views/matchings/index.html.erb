@@ -1,0 +1,37 @@
+<% provide(:title, "マッチング") %>
+<% provide(:page_title, "マッチング") %>
+
+<div class="col-lg-12">
+  <div class="col-lg-8">
+    <div class="bs-component">
+      <%= form_tag("/matching", method: "post", id: "matching") do %>
+        <fieldset>
+          <div class="form-group">
+            <label class="control-label">ランチ種別</label>
+            <div>
+              <div class="radio">
+                <label class="mr10">
+                  <%= radio_button_tag 'lunch_type', 0, checked: true %>
+                  外食
+                </label>
+                <label>
+                  <%= radio_button_tag 'lunch_type', 1 %>
+                  弁当
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>マッチング時刻</label>
+            <%= select_tag 'time_zone_id', options_for_select(@time_zones.collect{ |t| ["#{t.select_time} 【現在の応募人数】外食: #{t.get_users(0).size}人 弁当: #{t.get_users(1).size}人 ", t.id] }, disabled: @end_times), id: 'select', class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= submit_tag "マッチング開始", class: "btn btn-primary" %>
+          </div>
+        </fieldset>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<% provide(:title, "マッチング") %>
+<% provide(:page_title, "マッチング") %>
+
+<div class="col-lg-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+    <%= @user.try(:status) == 3 ? "マッチング失敗" : "マッチング受付終了" %>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <% if @user.try(:status) == 3 %>
+          <p>
+            人数が合わずマッチングができませんでした。<br>
+            時刻を再選択するか日を改めてご利用ください。
+          </p>
+          <%= link_to "時刻を再選択する", matching_change_path, class: "btn btn-primary" %>
+        <% else %>
+          <p>
+            現在マッチングを開始できる時刻がございません。<br>
+            また明日ご確認ください。
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

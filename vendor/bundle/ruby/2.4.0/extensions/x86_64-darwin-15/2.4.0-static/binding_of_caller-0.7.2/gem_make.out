@@ -1,0 +1,16 @@
+current directory: /Users/tomohirokogawa/Documents/git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+/Users/tomohirokogawa/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20170608-35713-12b9bsp.rb extconf.rb
+
+current directory: /Users/tomohirokogawa/Documents/git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /Users/tomohirokogawa/Documents/git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /Users/tomohirokogawa/Documents/git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.

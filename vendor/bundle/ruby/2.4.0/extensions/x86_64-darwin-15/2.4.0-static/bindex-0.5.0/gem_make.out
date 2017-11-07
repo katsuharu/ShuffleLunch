@@ -1,0 +1,15 @@
+current directory: /Users/tomohirokogawa/Documents/git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+/Users/tomohirokogawa/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20170608-28242-1m3fnos.rb extconf.rb
+creating Makefile
+
+current directory: /Users/tomohirokogawa/Documents/git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/tomohirokogawa/Documents/git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/tomohirokogawa/Documents/git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20170608-28242-1n36fgp/bindex

@@ -1,0 +1,65 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body { padding-top: 50px; }
+h1 {
+  font-size: 25px;
+  margin-bottom: 0px;
+}
+.mr5 {
+  margin-right: 5px;
+}
+.mr10 {
+  margin-right: 10px;
+}
+
+@media ( min-width: 768px ) {
+  #banner {
+    min-height: 300px;
+    border-bottom: none;
+  }
+  .bs-component {
+    position: relative;
+  }
+  .bs-component .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    z-index: 1;
+    display: block;
+  }
+  .bs-component .modal-dialog {
+    width: 90%;
+  }
+  .bs-component .popover {
+    position: relative;
+    display: inline-block;
+    width: 220px;
+    margin: 20px;
+  }
+  .nav-tabs {
+    margin-bottom: 15px;
+  }
+  .progress {
+    margin-bottom: 10px;
+  }
+}
+
+.spectrumHeader {
+  transition: background-color 5s ease;
+}

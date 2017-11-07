@@ -1,0 +1,39 @@
+<% provide(:title, "マッチング") %>
+
+<div class="col-lg-12">
+  <div class="well bs-component">
+    <div class="chat_header">
+      <div class="chat_title">
+        チャットルーム
+        <%= "(外食)" if @matching[0].try(:lunch_type) == 0 %>
+        <%= "(弁当)" if @matching[0].try(:lunch_type) == 1 %>
+        <div class="chat_description">※ 当日のみ有効なチャットルームとなります。</div>
+      </div>
+      <div class="chat_exit">
+        <%= link_to "退室する", matching_change_path(matching_id: @matching[0].try(:id)), data: { confirm: "チャットルームを退室しマッチング時刻選択画面に遷移します。再入室はできませんが本当によろしいでしょうか？" }, class: "btn btn-danger" %>
+      </div>
+    </div>
+    <fieldset>
+      <div class="well bs-component chat_box">
+        <div id="messages">
+          <%= render @messages %>
+        </div>
+      </div>
+
+      <form class="form-horizontal" id="user_id_<%= @user.try(:id) %>">
+        <div class="form-group">
+          <div class="col-lg-12">
+            <textarea class="js-content form-control" rows="1" id="textArea" data-behavior="room_speaker" placeholder="コメント"></textarea>
+          </div>
+        </div>
+      </form>
+    </fieldset>
+  </div>
+</div>
+
+<style>
+.page-header {
+  padding-bottom: initial;
+  border-bottom: initial;
+}
+</style>

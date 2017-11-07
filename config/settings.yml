@@ -1,0 +1,18 @@
+password_reset:
+  send_mail: "パスワード再設定用のメールを送信しました"
+  not_found: "メールアドレスが見つかりませんでした"
+  empty: "を入力してください"
+  success: "パスワードを再設定しました"
+  expired: "パスワード再設定の有効期間が過ぎました"
+
+session:
+  not_found: "アカウントが存在しないか、パスワードが間違っています"
+
+user:
+  deny_company: "は許可されておりません"
+  already_used: "は既に使用されています"
+
+matching:
+  deny_time_zone: "マッチング開始時間を過ぎているため受け付けることができませんでした"
+  not_found_time_zone: "マッチング時刻を見つけることができませんでした"
+  not_exist_lunch_type: "ランチ種別を選択してください。"

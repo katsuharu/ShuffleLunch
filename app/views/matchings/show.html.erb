@@ -1,0 +1,15 @@
+<% provide(:title, "マッチング") %>
+<% provide(:page_title, "マッチング") %>
+
+<div class="col-lg-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">マッチング中</div>
+    <div class="panel-body">
+      <div class="form-group">
+        <%= @user.try(:time_zone).try(:execution_time) %>分頃にマッチングが完了します。<br>
+        ※ マッチングが完了した状態でアクセスするとチャットルームに遷移します。
+      </div>
+      <%= link_to "時間変更", matching_change_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

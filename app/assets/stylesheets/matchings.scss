@@ -1,0 +1,37 @@
+// Place all the styles related to the Matchings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.chat_box {
+  background-color: white;
+  height: 400px;
+  overflow-y: scroll;
+  font-size: 14px;
+}
+
+.chat_box b {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.chat_box p {
+  margin: 0 0 6px;
+}
+
+.chat_header {
+  margin-bottom: 10px;
+}
+
+.chat_exit {
+  text-align: right;
+}
+
+.chat_title {
+  float: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.chat_description {
+  font-size: 10px;
+}

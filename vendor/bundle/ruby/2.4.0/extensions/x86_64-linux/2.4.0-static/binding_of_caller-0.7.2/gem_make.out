@@ -1,0 +1,16 @@
+current directory: /media/sf_git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+/root/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20171103-2011-1gck3qe.rb extconf.rb
+
+current directory: /media/sf_git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /media/sf_git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /media/sf_git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.

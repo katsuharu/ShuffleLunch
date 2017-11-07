@@ -1,0 +1,14 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <% @user.errors.full_messages.each do |message| %>
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <div class="shuffle-message alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong><%= message %></strong>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,26 @@
+<header>
+  <div class="navbar navbar-default navbar-fixed-top" id="spectrumPlugin">
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to "シャッフルランチ", root_path, class: "navbar-brand" %>
+        <% if current_user.present? %>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <% end %>
+      </div>
+      <% if current_user.present? %>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li <%= current_page matching_path %>><%= link_to "マッチング", matching_path %></li>
+            <li <%= current_page profile_path %>><%= link_to "プロフィール", profile_path %></li>
+            <li <%= current_page contact_path %>><%= link_to "お問い合わせ", contact_path %></li>
+            <li><%= link_to "ログアウト", logout_path, method: "delete" %></li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,15 @@
+current directory: /media/sf_git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+/root/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20171103-2011-eg7typ.rb extconf.rb
+creating Makefile
+
+current directory: /media/sf_git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /media/sf_git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: /media/sf_git/ShuffleLunch/vendor/bundle/ruby/2.4.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20171103-2011-1ovgh3a
