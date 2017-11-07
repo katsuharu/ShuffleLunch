@@ -9,12 +9,6 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :ニックネーム, class: 'mr5' %>
-          <span class="label label-danger">必須</span>
-          <%= f.text_field :name, class: 'form-control', required: true %>
-        </div>
-
-        <div class="form-group">
           <%= f.label :メールアドレス, class: 'mr5' %>
           <span class="label label-danger">必須</span>
           <%= f.email_field :email, class: 'form-control', required: true %>
@@ -40,6 +34,46 @@
           <% end %>
         </div>
 
+        <div class="form-group">
+          <%= f.label :名前, class: 'mr5' %>
+          <% if controller.action_name == "new" || controller.action_name == "create" %>
+            <span class="label label-danger">必須</span>
+            <%= f.text_field :touroke_name, class: 'form-control', required: true %>
+          <% else %>
+            <%= f.text_field :touroke_name, class: 'form-control' %>
+          <% end %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :部署名, class: 'mr5' %>
+          <% if controller.action_name == "new" || controller.action_name == "create" %>
+            <span class="label label-danger">必須</span>
+            <%= f.text_field :busyo_name, class: 'form-control', required: true %>
+          <% else %>
+            <%= f.text_field :busyo_name, class: 'form-control' %>
+          <% end %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :Slack ID, class: 'mr5' %>
+          <% if controller.action_name == "new" || controller.action_name == "create" %>
+            <span class="label label-danger">必須</span>
+            <%= f.text_field :slack_id, class: 'form-control', required: true %>
+          <% else %>
+            <%= f.text_field :slack_id, class: 'form-control' %>
+          <% end %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :プロフィール写真, class: 'mr5' %>
+          <% if controller.action_name == "new" || controller.action_name == "create" %>
+            <span class="label label-danger">必須</span>
+            <%= f.text_field :profile_img, class: 'form-control', required: true %>
+          <% else %>
+            <%= f.text_field :profile_img, class: 'form-control' %>
+          <% end %>
+        </div>
+        
         <div class="form-group">
           <%= f.submit yield(:button_text), class: "btn btn-primary" %>
           <%= link_to "戻る", :back, class: "btn btn-success" %>
