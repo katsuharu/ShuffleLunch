@@ -5,6 +5,12 @@
   <div class="bs-component">
     <%= form_for(:session, url: login_path, class: 'form-horizontal') do |f| %>
       <fieldset>
+
+        <div class="form-group">
+          <%= f.label :企業コード %>
+          <%= f.text_field :company_code, class: 'form-control' %>
+        </div>
+
         <div class="form-group">
           <%= f.label :メールアドレス %>
           <%= f.email_field :email, class: 'form-control' %>

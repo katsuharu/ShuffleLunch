@@ -1,6 +1,9 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages' %>
 
+  <%= f.label :企業コード %>
+  <%= f.text_field :company_code, class: 'form-control' %>
+
   <%= f.label :メールアドレス %>
   <%= f.email_field :email, class: 'form-control' %>
 
