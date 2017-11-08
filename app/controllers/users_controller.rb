@@ -49,8 +49,11 @@ class UsersController < ApplicationController
                                    :company_code,
                                    :email,
                                    :password,
-                                   :password_confirmation
+                                   :password_confirmation,
+                                   :department_name,
+                                   :slack_id,
+                                   :profile_img
                                    )
     end
-
+    
 end
