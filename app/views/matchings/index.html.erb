@@ -22,10 +22,11 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <label>マッチング時刻</label>
-            <%= select_tag 'time_zone_id', options_for_select(@time_zones.collect{ |t| ["#{t.select_time} 【現在の応募人数】外食: #{t.get_users(0).size}人 弁当: #{t.get_users(1).size}人 ", t.id] }, disabled: @end_times), id: 'select', class: 'form-control' %>
-          </div>
+
+          <!-- <div class="form-group"> -->
+            <!-- <label>マッチング時刻</label> -->
+            <%= #select_tag 'time_zone_id', options_for_select(@time_zones.collect{ |t| ["#{t.select_time} 【現在の応募人数】外食: #{t.get_users(0).size}人 弁当: #{t.get_users(1).size}人 ", t.id] }, disabled: @end_times), id: 'select', class: 'form-control' %>
+          <!-- </div> -->
 
           <div class="form-group">
             <%= submit_tag "マッチング開始", class: "btn btn-primary" %>
