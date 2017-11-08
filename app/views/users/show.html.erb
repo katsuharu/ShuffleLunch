@@ -20,6 +20,21 @@
         <label>メールアドレス</label>
         <div><%= @user.try :email %></div>
       </div>
+
+      <div class="form-group">
+        <label>部署名</label>
+        <div><%= @user.try :department_name %></div>
+      </div>
+
+      <div class="form-group">
+        <label>Slack ID</label>
+        <div><%= @user.try :slack_id %></div>
+      </div>
+
+      <div class="form-group">
+        <label>プロフィール写真</label>
+        <div><%= @user.try :profile_img %></div>
+      </div>
     </fieldset>
     <%= link_to "編集", "profile/edit", class: "btn btn-primary" %>
     <%= link_to "削除", user_delete_path, method: :delete, data: { confirm: "アカウントを削除します。本当によろしいでしょうか？" }, class: "btn btn-danger" %>
