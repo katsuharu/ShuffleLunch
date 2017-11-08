@@ -4,6 +4,9 @@
   <%= f.label :企業コード %>
   <%= f.text_field :company_code, class: 'form-control' %>
 
+  <%= f.label :名前 %>
+  <%= f.text_field :name, class: 'form-control' %>
+
   <%= f.label :メールアドレス %>
   <%= f.email_field :email, class: 'form-control' %>
 
@@ -13,13 +16,10 @@
   <%= f.label :パスワード確認 %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-  <%= f.label :名前 %>
-  <%= f.text_field :touroke_name, class: 'form-control' %>
-
   <%= f.label :部署名 %>
-  <%= f.text_field :busyo_name, class: 'form-control' %>
+  <%= f.text_field :department_name, class: 'form-control' %>
 
-  <%= f.label :slack ID %>
+  <%= f.label :スラックID %>
   <%= f.text_field :slack_id, class: 'form-control' %>
 
   <%= f.label :プロフィール写真 %>
