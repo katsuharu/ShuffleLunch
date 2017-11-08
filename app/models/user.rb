@@ -19,7 +19,7 @@ class User < ApplicationRecord
     scope: :company_code
   }
 
-  #validate :deny_company
+  validate :deny_company
 
   def deny_company
     if company_code.present? && Company.find_by(code: company_code).blank?
