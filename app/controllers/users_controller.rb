@@ -52,7 +52,8 @@ class UsersController < ApplicationController
                                    :password_confirmation,
                                    :department_name,
                                    :slack_id,
-                                   :data
+                                   :profile_img,
+                                   :ctype
                                    )
     end
     
