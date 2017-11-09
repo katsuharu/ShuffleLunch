@@ -33,6 +33,7 @@ class User < ApplicationRecord
     ps = ['image/jpeg', 'image/jpg', 'image/gif', 'image/png']
     if   !ps.include?(User.profile_img)
       errors.add(:profile_img, 'は画像ファイルではありません。')
+    end
   end
 
   def over_size
