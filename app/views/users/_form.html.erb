@@ -68,9 +68,9 @@
           <%= f.label :プロフィール写真, class: 'mr5' %>
           <% if controller.action_name == "new" || controller.action_name == "create" %>
             <span class="label label-danger">必須</span>
-            <%= f.file_field :profile_img, class: 'form-control', required: true %>
+            <%= f.file_field :data, class: 'form-control', required: true %>
           <% else %>
-            <%= f.file_field :profile_img, class: 'form-control' %>
+            <%= f.file_field :data, class: 'form-control' %>
           <% end %>
         </div>
         

@@ -22,8 +22,9 @@ class User < ApplicationRecord
   validates :slack_id , presence: true, uniqueness: true
 
   validate :deny_company
-  validate :file_kind     #アップロードファイルの妥当性をfile_invalid?メソッドで検証
-  validate :over_size
+  #validate :file_kind     #アップロードファイルの妥当性をfile_invalid?メソッドで検証
+  #validate :over_size
+  validate :file_invalid?
 
   def deny_company
     if company_code.present? && Company.find_by(code: company_code).blank?
@@ -31,19 +32,17 @@ class User < ApplicationRecord
     end
   end
 
-  def file_kind
+  def data=(data)             #書き込み専用のdataプロパティ(UploadFileオブジェクト)を定義
+    self.ctype = data.content_type
+    self.profile_img = data.read
+  end
+
+  def file_invalid?
     ps = ['image/jpeg', 'image/jpg', 'image/gif', 'image/png']
-    if !ps.include?(self.profile_img)
-      errors.add(:profile_img, 'は画像ファイルではありません。')
-    end
+    errors.add(:profile_img, 'は画像ファイルではありません。') if !ps.include?(self.ctype)
+    errors.add(:profile_img, 'のサイズが1MBを超えています。') if self.profile_img.length > 1.megabyte
   end
-
-  def over_size
-    if self.profile_img.length > 1.megabyte
-      errors.add(:profile_img, Settings.user[:over_size])
-    end
-  end
-
+ 
   def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
