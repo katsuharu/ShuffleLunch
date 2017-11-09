@@ -20,23 +20,24 @@ class User < ApplicationRecord
   }
 
   validate :deny_company
-  validate :file_invalid?     #アップロードファイルの妥当性をfile_invalid?メソッドで検証
-
-  def data=(data)             #書き込み専用のdataプロパティ(UploadFileオブジェクト)を定義
-    self.ctype = data.content_type
-    self.profile_img = data.read
-  end
-
-  private
-    def file_invalid?         #アップロードファイルの妥当性を検証するfile_invalid?メソッドを定義
-      ps = ['image/jpeg', 'image/jpg', 'image/gif', 'image/png']
-      errors.add(:profile_img, 'は画像ファイルではありません。') if !ps.include?(self.ctype)
-      errors.add(:profile_img, 'のサイズが1MBを超えています。') if self.profile_img.length > 1.megabyte
-    end
+  validate :file_kind     #アップロードファイルの妥当性をfile_invalid?メソッドで検証
+  validate :over_size
 
   def deny_company
     if company_code.present? && Company.find_by(code: company_code).blank?
       errors.add(:company_code, Settings.user[:deny_company])
+    end
+  end
+
+  def file_kind
+    ps = ['image/jpeg', 'image/jpg', 'image/gif', 'image/png']
+    if   !ps.include?(User.profile_img)
+      errors.add(:profile_img, 'は画像ファイルではありません。')
+  end
+
+  def over_size
+    if User.profile_img.length > 1.megabyte
+      errors.add(:profile_img, Settings.user[:over_size])
     end
   end
 
