@@ -25,14 +25,14 @@ class User < ApplicationRecord
 
   def data=(data)             #書き込み専用のdataプロパティ(UploadFileオブジェクト)を定義
     self.ctype = data.content_type
-    self.photo = data.read
+    self.profile_img = data.read
   end
 
   private
     def file_invalid?         #アップロードファイルの妥当性を検証するfile_invalid?メソッドを定義
       ps = ['image/jpeg', 'image/gif', 'image/png']
-      errors.add(:photo, 'は画像ファイルではありません。') if !ps.include?(self.ctype)
-      errors.add(:photo, 'のサイズが1MBを超えています。') if self.photo.length > 1.megabyte
+      errors.add(:profile_img, 'は画像ファイルではありません。') if !ps.include?(self.ctype)
+      errors.add(:profile_img, 'のサイズが1MBを超えています。') if self.profile_img.length > 1.megabyte
     end
 
   def deny_company
