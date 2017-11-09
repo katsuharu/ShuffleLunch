@@ -20,7 +20,6 @@ class User < ApplicationRecord
   }
 
   validate :deny_company
-
   validate :file_invalid?     #アップロードファイルの妥当性をfile_invalid?メソッドで検証
 
   def data=(data)             #書き込み専用のdataプロパティ(UploadFileオブジェクト)を定義
@@ -30,7 +29,7 @@ class User < ApplicationRecord
 
   private
     def file_invalid?         #アップロードファイルの妥当性を検証するfile_invalid?メソッドを定義
-      ps = ['image/jpeg', 'image/gif', 'image/png']
+      ps = ['image/jpeg', 'image/jpg', 'image/gif', 'image/png']
       errors.add(:profile_img, 'は画像ファイルではありません。') if !ps.include?(self.ctype)
       errors.add(:profile_img, 'のサイズが1MBを超えています。') if self.profile_img.length > 1.megabyte
     end
