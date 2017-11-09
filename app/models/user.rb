@@ -18,6 +18,8 @@ class User < ApplicationRecord
     message: Settings.user[:already_used],
     scope: :company_code
   }
+  validates :department_name, presence: true
+  validates :slack_id , presence: true, uniqueness: true
 
   validate :deny_company
   validate :file_kind     #アップロードファイルの妥当性をfile_invalid?メソッドで検証
@@ -31,13 +33,13 @@ class User < ApplicationRecord
 
   def file_kind
     ps = ['image/jpeg', 'image/jpg', 'image/gif', 'image/png']
-    if   !ps.include?(User.profile_img)
+    if !ps.include?(self.profile_img)
       errors.add(:profile_img, 'は画像ファイルではありません。')
     end
   end
 
   def over_size
-    if User.profile_img.length > 1.megabyte
+    if self.profile_img.length > 1.megabyte
       errors.add(:profile_img, Settings.user[:over_size])
     end
   end
