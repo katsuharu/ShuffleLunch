@@ -19,7 +19,7 @@ class User < ApplicationRecord
     scope: :company_code
   }
   validates :department_name, presence: true
-  validates :slack_id , presence: true, uniqueness: true
+  validates :slack_id , presence: true #, uniqueness: true
 
   validate :deny_company
   #validate :file_kind     #アップロードファイルの妥当性をfile_invalid?メソッドで検証
