@@ -11,6 +11,8 @@ session:
 user:
   deny_company: "は許可されておりません"
   already_used: "は既に使用されています"
+  file_kind: "は画像ファイルではありません。"
+  over_size: "のサイズが1MBを超えています"
 
 matching:
   deny_time_zone: "マッチング開始時間を過ぎているため受け付けることができませんでした"
