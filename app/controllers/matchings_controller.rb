@@ -2,7 +2,7 @@ class MatchingsController < ApplicationController
 
   before_action :logged_in_user, :correct_user, only: [:index, :update]
   before_action :set_user, only: [:index, :update, :change]
-  before_action :valid_lunch_type, :valid_timezone, only: :update
+  before_action only: :update
 
   def index
     case current_user.status
