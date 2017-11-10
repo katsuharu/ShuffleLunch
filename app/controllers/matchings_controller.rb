@@ -5,20 +5,22 @@ class MatchingsController < ApplicationController
 	max = 3
 	min = 2
 
-  def index
-    entry = Entry.new(user_id: current_user.id)
-    if entry.save
-      flash[:success] = "シャッフルランチにエントリーしました。"
-    else
-      flash[:success] = "シャッフルランチにエントリーできませんでした。"
-    end
-  end
+  	def index
 
+  	end
 
+	def entry
+		entry = Entry.new(user_id: current_user.id)
+		if entry.save
+		  flash[:success] = "シャッフルランチにエントリーしました。"
+		else
+		  flash[:success] = "シャッフルランチにエントリーできませんでした。"
+		end
+	end
 
-  private
-    def set_user
-      @user = current_user
-    end
+	private
+	def set_user
+		@user = current_user
+	end
 
 end
