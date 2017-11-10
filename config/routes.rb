@@ -11,8 +11,9 @@ Rails.application.routes.draw do
 
   post   '/signup',  to: 'users#create'
   post   '/user/create',  to: 'users#create'
-  post   '/matching',to: 'matchings#update'
+  post   '/waiting',to: 'matchings#index'
   post   '/contact', to: 'static_pages#send_mail'
+  post   '/show', to: 'static_pages#success_mail'
   post   '/login',   to: 'sessions#create'
 
   patch  '/user/update',  to: 'users#update'
