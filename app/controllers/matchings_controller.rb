@@ -50,28 +50,6 @@ class MatchingsController < ApplicationController
     end
   end
 
-  def change
-    @user.update status: 0, time_zone_id: nil, lunch_type: nil
-    matching = Matching.find_by id: room_params[:matching_id]
-    if matching.present?
-      is_update = true
-      case current_user.try(:id)
-      when matching.user1_id
-        matching.update user1_id: nil
-      when matching.user2_id
-        matching.update user2_id: nil
-      when matching.user3_id
-        matching.update user3_id: nil
-      when matching.user4_id
-        matching.update user4_id: nil
-      else
-        is_update = false
-      end
-      Message.create!(user_id: current_user.try(:id), content: "#{current_user.try(:name)}が退室しました。", matching_id: matching.try(:id)) if is_update
-    end
-    redirect_to :action => "index"
-  end
-
   private
 
     def matching_params
