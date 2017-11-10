@@ -27,7 +27,8 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -36,7 +37,7 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => 'smtp.gmail.com',
-    :user_name => "shuffle.lunch19@gmail.com",
+    :user_name => "traveler.18.challenge@gmail.com",
     :password => "", # 本番環境で直接入力
     :authentication => 'login',
   }
