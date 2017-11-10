@@ -5,40 +5,7 @@ class MatchingsController < ApplicationController
   before_action only: :update
 
   def index
-    case current_user.status
-    when 0
-      now = Time.now.strftime("%H%M")
-      @end_times = Array.new
-      time_zones = Array.new
-
-      @time_zones = TimeZone.all.includes(:users).references(:users)
-
-      TimeZone.all.each do |t|
-        if t.try(:execution_time).delete(":") <= now
-          @end_times << t.try(:select_time)
-          @end_times << t.try(:id)
-        end
-      end
-
-      @time_zones.each do |t|
-        time_zones << t.try(:select_time)
-        time_zones << t.try(:id)
-      end
-      render "end" if @end_times == time_zones
-    when 1
-      render "show"
-    when 2
-      # TODO: テーブル設計段階でリファクタする必要あり？中間テーブル設ける？
-      @matching = Matching.where user1_id: current_user.id
-      @matching = @matching.or Matching.where user2_id: current_user.id
-      @matching = @matching.or Matching.where user3_id: current_user.id
-      @matching = @matching.or Matching.where user4_id: current_user.id
-
-      @messages = Message.includes(:user).references(:user).where matching_id: @matching[0].try(:id)
-      render "room"
-    when 3
-      render "end"
-    end
+   
   end
 
   def update
