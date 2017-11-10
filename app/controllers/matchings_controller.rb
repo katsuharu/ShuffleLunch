@@ -51,26 +51,8 @@ class MatchingsController < ApplicationController
   end
 
   private
-
-    def matching_params
-      params.permit :time_zone_id, :lunch_type
-    end
-
-    def room_params
-      params.permit :matching_id
-    end
-
     def set_user
       @user = current_user
-    end
-
-    def valid_timezone
-      timezone = TimeZone.find_by id: matching_params[:time_zone_id]
-      if timezone.blank?
-        flash[:danger] = Settings.matching[:not_found_time_zone]
-      elsif timezone.try(:execution_time).delete(":") <= Time.now.strftime("%H%M")
-        flash[:danger] = Settings.matching[:deny_time_zone]
-      end
     end
 
 end
