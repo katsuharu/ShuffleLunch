@@ -5,18 +5,12 @@ class MatchingsController < ApplicationController
   before_action only: :update
 
   def index
-    entry = Entry.new(user_id: current_user.id)
-    if entry.save
-      flash[:success] = "シャッフルランチにエントリーしました。"
-      redirect_to root_url      
-    else
-      redirect_to matching_path
-    end
+    
   end
 
   def update
     if flash[:danger].blank?
-      render :action "show"
+      render "show"
     else
       redirect_to :action => "index"
     end
