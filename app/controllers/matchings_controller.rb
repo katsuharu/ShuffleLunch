@@ -73,10 +73,4 @@ class MatchingsController < ApplicationController
       end
     end
 
-    def valid_lunch_type
-      if matching_params[:lunch_type].blank?
-        flash[:danger] = Settings.matching[:not_exist_lunch_type]
-      end
-    end
-
 end
