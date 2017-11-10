@@ -10,7 +10,7 @@ class MatchingsController < ApplicationController
 
   def update
     if flash[:danger].blank?
-      @user.update_attributes time_zone_id: matching_params[:time_zone_id], status: 1, lunch_type: matching_params[:lunch_type]
+      #@user.update_attributes time_zone_id: matching_params[:time_zone_id], status: 1, lunch_type: matching_params[:lunch_type]
       render "show"
     else
       redirect_to :action => "index"
