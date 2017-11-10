@@ -9,7 +9,6 @@
         <%= @user.try(:time_zone).try(:execution_time) %>分頃にマッチングが完了します。<br>
         ※ マッチングが完了した状態でアクセスするとチャットルームに遷移します。
       </div>
-      <%= link_to "時間変更", matching_change_path, class: "btn btn-primary" %>
     </div>
   </div>
 </div>
