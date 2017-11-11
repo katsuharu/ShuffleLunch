@@ -18,7 +18,7 @@ class MatchingsController < ApplicationController
 			if @@entry_id % 3 == 0
 				@@pair_no += 1
 				p @@pair_no
-				Entry.where(entry_id: @@entry_id).update(pair_no: @@pair_no)
+				Entry.where(entry_id: @@entry_id-2 .. @@entry_id).update(pair_no: @@pair_no)
 
 		  		flash[:success] = "シャッフルランチにエントリーしました。"
 		  	end
