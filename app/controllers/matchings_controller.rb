@@ -9,15 +9,15 @@ class MatchingsController < ApplicationController
   	end
 
 	def entry
+		entry = Entry.new(user_id: current_user.id)
+		
 		if entry.save
-			entry = Entry.new(user_id: current_user.id)
 			@@entry_id += 1;
-
 			if @@entry_id % 3 == 0
 				@@pair_no++;
-				Entry.where(entry_id: @@entry_id).update(pair_no: @@pair_no)
+				# Entry.where(entry_id: @@entry_id).update(pair_no: @@pair_no)
 
-		  	flash[:success] = "シャッフルランチにエントリーしました。"
+		  		flash[:success] = "シャッフルランチにエントリーしました。"
 		else
 		  flash[:success] = "シャッフルランチにエントリーできませんでした。"
 		end
