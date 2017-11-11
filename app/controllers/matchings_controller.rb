@@ -9,24 +9,23 @@ class MatchingsController < ApplicationController
   	end
 
 	def entry
-		entry = Entry.new(user_id: current_user.id)
-		
-		if entry.save
-			@@entry_id += 1
-			p @@entry_id
-			Entry.where(user_id: current_user.id).update(entry_id: @@entry_id)
-		  	flash[:success] = "シャッフルランチにエントリーしました。"
+		@@entry_id += 1
+		p @@entry_id
+		User.where(user_id: current_user.id).update(entry_id: @@entry_id)
+	  	flash[:success] = "シャッフルランチにエントリーしました。"
 
-			if @@entry_id % 3 == 0
-				@@pair_no += 1
-				p @@pair_no
-				Entry.where(entry_id: @@entry_id-2 .. @@entry_id).update(pair_no: @@pair_no)
+		if @@entry_id % 3 == 0
+			@@pair_no += 1
+			p @@pair_no
+			User.where(entry_id: @@entry_id-2 .. @@entry_id).update(pair_no: @@pair_no)
 
-		  		render action: 'show'
-		  	end
-		else
-		  flash[:success] = "シャッフルランチにエントリーできませんでした。"
-		end
+	  		render action: 'show'
+	  	end
+	end
+
+	def check
+		@entry = Entry.where(pair_no: )
+		@pair = User.find
 	end
 
 	private
