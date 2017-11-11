@@ -22,7 +22,7 @@ class MatchingsController < ApplicationController
 				p @@pair_no
 				Entry.where(entry_id: @@entry_id-2 .. @@entry_id).update(pair_no: @@pair_no)
 
-		  		render "show "
+		  		render action: 'show'
 		  	end
 		else
 		  flash[:success] = "シャッフルランチにエントリーできませんでした。"
