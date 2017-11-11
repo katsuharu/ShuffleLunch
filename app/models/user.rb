@@ -24,7 +24,7 @@ class User < ApplicationRecord
   validate :deny_company
   #validate :file_kind     #アップロードファイルの妥当性をfile_invalid?メソッドで検証
   #validate :over_size
-  validate :file_invalid?
+  # validate :file_invalid?
 
   def deny_company
     if company_code.present? && Company.find_by(code: company_code).blank?
