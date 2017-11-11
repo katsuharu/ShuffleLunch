@@ -15,12 +15,14 @@ class MatchingsController < ApplicationController
 			@@entry_id += 1
 			p @@entry_id
 			Entry.where(user_id: current_user.id).update(entry_id: @@entry_id)
+		  	flash[:success] = "シャッフルランチにエントリーしました。"
+
 			if @@entry_id % 3 == 0
 				@@pair_no += 1
 				p @@pair_no
 				Entry.where(entry_id: @@entry_id-2 .. @@entry_id).update(pair_no: @@pair_no)
 
-		  		flash[:success] = "シャッフルランチにエントリーしました。"
+		  		render "show "
 		  	end
 		else
 		  flash[:success] = "シャッフルランチにエントリーできませんでした。"
