@@ -24,6 +24,7 @@ class MatchingsController < ApplicationController
 	end
 
 	def check
+		@users = User.all
 		# @entry = Entry.where(pair_no: )
 		# @pair = User.find
 	end
