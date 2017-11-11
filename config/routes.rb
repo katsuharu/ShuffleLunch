@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post   '/signup',  to: 'users#create'
   post   '/user/create',  to: 'users#create'
   post   '/waiting',to: 'matchings#entry'
+  post   '/check', to: 'matchings#check'
   post   '/contact', to: 'static_pages#send_mail'
   post   '/show', to: 'static_pages#success_mail'
   post   '/login',   to: 'sessions#create'
