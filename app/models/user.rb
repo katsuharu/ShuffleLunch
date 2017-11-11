@@ -31,17 +31,6 @@ class User < ApplicationRecord
       errors.add(:company_code, Settings.user[:deny_company])
     end
   end
-
-  def data=(data)             #書き込み専用のdataプロパティ(UploadFileオブジェクト)を定義
-    self.ctype = data.content_type
-    self.profile_img = data.read
-  end
-
-  def file_invalid?
-    ps = ['image/jpeg', 'image/jpg', 'image/gif', 'image/png']
-    errors.add(:profile_img, 'は画像ファイルではありません。') if !ps.include?(self.ctype)
-    errors.add(:profile_img, 'のサイズが1MBを超えています。') if self.profile_img.length > 1.megabyte
-  end
  
   def remember
     self.remember_token = User.new_token
