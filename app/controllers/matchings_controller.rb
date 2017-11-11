@@ -24,14 +24,16 @@ class MatchingsController < ApplicationController
 	end
 
 	def check
-		@users = User.all
-		# @entry = Entry.where(pair_no: )
-		# @pair = User.find
+		@user = User.where(pair_id: current_user.pair_id)
 	end
 
 	private
 	def set_user
 		@user = current_user
+	end
+
+	def group_member
+		
 	end
 
 end
