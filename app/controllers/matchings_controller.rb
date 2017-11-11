@@ -14,6 +14,7 @@ class MatchingsController < ApplicationController
 		if entry.save
 			@@entry_id += 1
 			p @@entry_id
+			Entry.where(user_id: current_user.id).update(entry_id: @@entry_id)
 			if @@entry_id % 3 == 0
 				@@pair_no += 1
 				p @@pair_no
