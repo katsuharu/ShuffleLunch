@@ -11,7 +11,7 @@ class MatchingsController < ApplicationController
 	def entry
 		@@entry_id += 1
 		p @@entry_id
-		User.where(user_id: current_user.id).update(entry_id: @@entry_id)
+		User.where(id: current_user.id).update(entry_id: @@entry_id)
 	  	flash[:success] = "シャッフルランチにエントリーしました。"
 
 		if @@entry_id % 3 == 0
