@@ -2,7 +2,6 @@ class MessageBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(message)
-    RoomChannel.broadcast_to "room_channel_#{message.try(:matching_id)}", message: render_message(message)
   end
 
   private
