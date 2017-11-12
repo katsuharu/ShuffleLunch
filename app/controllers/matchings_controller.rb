@@ -1,6 +1,6 @@
 class MatchingsController < ApplicationController
-	before_action :logged_in_user, :correct_user, only: [:index]
-	before_action :set_user, only: [:index] 
+	before_action :logged_in_user, :correct_user, only: [:index, :entry, :check]
+	before_action :set_user, only: [:index, :entry, :check] 
 	
 	@@entry_id = 0
 	@@pair_no = 0
