@@ -24,7 +24,7 @@ class MatchingsController < ApplicationController
 	end
 
 	def check
-		@user = User.where(pair_id: current_user.pair_id)
+		@pair = User.where(pair_id: current_user.pair_id)
 	end
 
 	private
