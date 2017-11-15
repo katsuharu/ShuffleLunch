@@ -37,6 +37,7 @@ class UsersController < ApplicationController
   end
 
   def check
+    p 100000000
     @pairs = User.where(pair_id: current_user.pair_id)
     logger.info(@pair)
   end
