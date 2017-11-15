@@ -7,6 +7,6 @@ class ContactMailer < ApplicationMailer
   #
   def contact_contents params
     @contents = params
-    mail to: "shuffle.lunch19@gmail.com", subject: "【シャッフルランチ】お問い合わせ"
+    mail to: "traveler.18.challenge@gmail.com", subject: "【シャッフルランチ】お問い合わせ"
   end
 end
