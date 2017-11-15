@@ -24,11 +24,6 @@ class MatchingsController < ApplicationController
 	  	end
 	end
 
-	def check
-		@pairs = User.where(pair_id: current_user.pair_id)
-		logger.info(@pair)
-	end
-
 	private
 
 	def set_user

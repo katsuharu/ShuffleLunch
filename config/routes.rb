@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get    '/profile', to: 'users#show'
   get    '/profile/edit', to: 'users#edit'
   get    '/matching',to: 'matchings#index'
-  get    '/check', to: 'matchings#check'
+  get    '/check', to: 'users#check'
   get    '/contact', to: 'static_pages#contact'
   get    '/login',   to: 'sessions#new'
 
