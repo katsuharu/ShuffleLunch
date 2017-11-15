@@ -38,6 +38,7 @@ class UsersController < ApplicationController
 
   def check
     p 100000000
+    @pairs = User.new
     @pairs = User.where(pair_id: current_user.pair_id)
     debugger
   end
