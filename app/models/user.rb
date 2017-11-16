@@ -8,30 +8,20 @@ class User < ApplicationRecord
 
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   validates :name,  presence: true, length: { maximum: 50 }
-  validates :company_code, presence: true
   validates :name, uniqueness: {
-    message: Settings.user[:already_used],
-    scope: :company_code
+    message: Settings.user[:already_used]
   }
   validates :email, presence: true
   validates :email, uniqueness: {
-    message: Settings.user[:already_used],
-    scope: :company_code
+    message: Settings.user[:already_used]
   }
   #validates :department_name, presence: true
   #validates :slack_id , presence: true #, uniqueness: true
 
-  validate :deny_company
   #validate :file_kind     #アップロードファイルの妥当性をfile_invalid?メソッドで検証
   #validate :over_size
   # validate :file_invalid?
 
-  def deny_company
-    if company_code.present? && Company.find_by(code: company_code).blank?
-      errors.add(:company_code, Settings.user[:deny_company])
-    end
-  end
- 
   def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
