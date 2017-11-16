@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:session][:email], company_code: params[:session][:company_code])
+    user = User.find_by(email: params[:session][:email])
     if user && user.authenticated?(:password, params[:session][:password])
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)

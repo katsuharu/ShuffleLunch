@@ -4,7 +4,6 @@ ja:
       user: ユーザー
     attributes:
       user:
-        company_code: 企業コード
         name: ニックネーム
         email: メールアドレス
         password: パスワード
