@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'carrierwave',             '1.1.0'
+gem 'mini_magick',             '4.7.0'
+gem 'fog',                     '1.40.0'
 
 gem 'jquery-rails'
 
