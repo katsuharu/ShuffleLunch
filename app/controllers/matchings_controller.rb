@@ -14,7 +14,6 @@ class MatchingsController < ApplicationController
 		p @@entry_id
 		User.where(id: current_user.id).update(entry_id: @@entry_id)
 	  	flash[:success] = "シャッフルランチにエントリーしました。"
-	  	redirect_to waiting_path
 
 		if @@entry_id % 3 == 0
 			@@pair_no += 1
@@ -22,6 +21,8 @@ class MatchingsController < ApplicationController
 			User.where(entry_id: @@entry_id-2 .. @@entry_id).update(pair_id: @@pair_no)
 
 	  		render action: 'show'
+	  	else
+	  		redirect_to waiting_path
 	  	end
 	end
 
